@@ -4,7 +4,7 @@ interface USER {
   password: string;
   name: string;
 }
-let UserInfoDetails: USER[] = [];
+const UserInfoDetails: USER[] = [];
 
 export const PostUserInfo = (userInfo: USER) => UserInfoDetails.push(userInfo);
 // Define the type for user objects
@@ -23,8 +23,8 @@ export const generateUniqueId = (): number => {
 };
 export const GetAllUsersInfo = () => UserInfoDetails;
 
-export const GetUserById = (id: any) => {
-  const userData = UserInfoDetails.find((item: any) => item.id === id);
+export const GetUserById = (id: number) => {
+  const userData = UserInfoDetails.find((item) => item.id === id);
   if (userData) {
     return userData;
   } else {

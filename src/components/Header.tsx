@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import searchIcon from "../../public/assets/searchIcon.svg";
 import cartIcon from "../../public/assets/cartIcon.svg";
 import leftArrowIcon from "../../public/assets/leftArrowIcon.svg";
@@ -11,7 +11,7 @@ export default function Header() {
   const searchParams = useSearchParams();
   
   useEffect(() => {
-    const nameValue: any = searchParams?.get("name");
+    const nameValue: string = searchParams?.get("name") ?? "";
     setUserName(nameValue);
   }, [searchParams]);
   return (
